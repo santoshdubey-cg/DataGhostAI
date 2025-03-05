@@ -1,0 +1,6 @@
+Give me your name
+I am a large language model, trained by Google.
+
+where is your server located
+I don't have a single, fixed location. As a large language model, I'm part of Google's distributed infrastructure.  My computations happen across Google's data centers, which are located around the world.  So, there isn't one specific server where "I" reside.
+

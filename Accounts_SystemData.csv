@@ -1,0 +1,12 @@
+﻿Id,Name,Type,SysAccountNumber,BillingCity,BillingState,BillingPostalCode,BillingCountry,Ownership,SLA_c,AnnualRevenue,Industry,UpsellOpportunity
+,Delta Marines,Customer - Direct,CBS - 00789654,Austin,TX,75251,U.S.A,Public,,95000$,Logistics,Yes
+,Jacobs & Sons,Customer - Direct,T24 - 12449044,Burlington,RL,96045,US,Private,Gold,5000$,Retail,Yes
+,FixData Entity Global,Customer - Channel,CBS - 11278276,Dallas,TX,98567,US,Private,,3000$,Manufacturing,No
+,Waterscience Corp,Customer - Channel,CBS - 90908700,San Francisco,CA,94101,US,Public,,560$,Manufacturing,No
+001dL00000gEetcQAC,sForce,Customer - Channel,T24 - 66978213,San Francisco,CA,94087,US,Private,,95000$,Retail,Maybe
+,Alexander Logistics,Customer - Direct,T24 - 88403289,Chicago,IL,65001,U.S.A,Other,,6000$,Logistics,Yes
+,Steve Bros Manufacturers,Customer - Direct,CBS - 44908077,New York,NY,89234,US,Other,,4500$,Manufacturing,Yes
+,"Cummins & Co,",Customer - Channel,CBS - 11743367,Portland,OR,90444,US,Public,,650$,Manufacturing,Maybe
+,Alexa Finances Pvt Ltd,Customer - Direct,T24 - 22050900,Phoenix,AZ,78123,U.S.A,Private,Silver,4000$,Financial Services,Maybe
+,GoJEK ,Customer - Direct,T24 - 78713121,Dallas,TX,75251,U.S.A,Private,,700$,Manufacturing,Maybe
+,Expert Retail,Customer - Channel,CBS - 65009098,Phoenix,AZ,78909,U.S.A,Private,,89000$,Retail,Yes

@@ -1,0 +1,158 @@
+
+| Reference ID | Name | Description | Alias Names | Business Logic | Critical Data Element | Examples | Format Type | Format Description | Lifecycle | Security Level | Classifications | Operation |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| PAY001 | Account Number | Unique identifier for a bank account | Account ID, Acct No. | Must be a valid account number according to the issuing bank's rules. | TRUE | 1234567890 | Text | Alphanumeric, varying length | Draft | Confidential | Banking, Payment | create |
+| PAY002 | Routing Number | Bank identification code | ABA Number, Transit Number | Identifies the bank or financial institution. | TRUE | 021000021 | Number | 9-digit numerical code | Draft | Confidential | Banking, Payment | create |
+| PAY003 | Transaction Amount | The monetary value of a transaction | Amount, Value | Must be a positive value. | TRUE | 100.00 | Decimal | Two decimal places | Draft | Confidential | Payment | create |
+| PAY004 | Transaction Date | The date the transaction occurred | Date, Txn Date | Must be a valid date. | TRUE | 2023-10-27 | Date | YYYY-MM-DD | Draft | Public | Payment | create |
+| PAY005 | Transaction Type | The type of transaction (e.g., debit, credit) | Type, Txn Type |  Indicates the nature of the transaction. | TRUE | Debit | Text |  Limited set of values (e.g., Debit, Credit, Transfer) | Draft | Public | Payment | create |
+| PAY006 | Merchant ID | Unique identifier for a merchant | MID, Merchant Number |  Identifies the merchant involved in the transaction. | TRUE | 123456789 | Text | Alphanumeric, varying length | Draft | Confidential | Merchant, Payment | create |
+| PAY007 | Card Number | Credit or debit card number | Card ID, PAN | Must adhere to Luhn algorithm validation. | TRUE | 4111111111111111 | Number | 13-19 digit numerical code | Draft | Confidential | Card, Payment | create |
+| PAY008 | Expiration Date | The date the card expires | Expiry Date, Exp Date |  Must be a valid date in the future. | TRUE | 12/25 | Date | MM/YY | Draft | Confidential | Card, Payment | create |
+| PAY009 | CVV | Card Verification Value | CVC, CID |  3 or 4 digit security code on the card. | TRUE | 123 | Number | 3-4 digit numerical code | Draft | Confidential | Card, Payment | create |
+| PAY010 | Billing Address | The cardholder's billing address | Address, Bill Address |  Address associated with the card. | TRUE | 123 Main St | Text | Varies | Draft | Public | Card, Payment | create |
+| PAY011 | Zip Code | The cardholder's billing zip code | Postal Code, Zip |  Numerical code identifying a geographic area. | TRUE | 90210 | Number | 5 or 9 digit numerical code | Draft | Public | Card, Payment | create |
+| PAY012 | Payment Gateway | Service that authorizes credit card payments | Gateway, Payment Processor |  Software and hardware that processes payments. | FALSE |  ExampleGateway | Text | Varies | Draft | Public | Payment | create |
+| PAY013 | Authorization Code | Code returned by the card issuer confirming authorization | Auth Code, Approval Code |  Alphanumeric code confirming authorization. | TRUE | ABC123 | Text | 6-digit alphanumeric code | Draft | Confidential | Payment | create |
+| PAY014 | Settlement Date | The date funds are transferred to the merchant's account | Settle Date |  Date funds are transferred. | TRUE | 2023-10-28 | Date | YYYY-MM-DD | Draft | Public | Merchant, Payment | create |
+| PAY015 | Batch Number | Unique identifier for a batch of transactions | Batch ID | Groups transactions for settlement. | FALSE | 1234 | Number |  Numerical code | Draft | Public | Merchant, Payment | create |
+| PAY016 | Refund Amount | The monetary value of a refund | Refund, Amount |  Must be a positive value. | TRUE | 50.00 | Decimal | Two decimal places | Draft | Confidential | Payment | create |
+| PAY017 | Refund Date | The date the refund was processed | Refund Date |  Must be a valid date. | TRUE | 2023-10-29 | Date | YYYY-MM-DD | Draft | Public | Payment | create |
+| PAY018 | Currency Code | ISO currency code | Currency, ISO Code |  Three-letter code representing a currency. | TRUE | USD | Text | 3-letter code | Draft | Public | Payment | create |
+| PAY019 | IP Address | Internet Protocol Address | IP |  Numerical label assigned to each device participating in a computer network. | FALSE | 192.168.1.1 | Text |  Varies | Draft | Public | Fraud, Payment | create |
+| PAY020 | Device ID | Unique identifier for a device | Device, UDID |  Identifies the device used for the transaction. | FALSE |  iPhone123 | Text | Varies | Draft | Public | Fraud, Payment | create |
+| PAY021 | Geolocation | Geographic location of the transaction | Location | Latitude and Longitude | FALSE | 34.0522,-118.2437 | Text | Varies | Draft | Public | Fraud, Payment | create |
+| PAY022 | AVS Result | Address Verification System result | AVS |  Code indicating the level of match between the billing address provided and the address on file with the card issuer. | FALSE |  Y | Text | Single letter code (e.g., Y, N, X) | Draft | Public | Fraud, Payment | create |
+| PAY023 | Cardholder Name | Name of the cardholder | Name |  Name as it appears on the card. | TRUE | John Doe | Text | Varies | Draft | Confidential | Card, Payment | create |
+| PAY024 | Email Address | Cardholder's email address | Email | Used for receipts and communication | FALSE | john.doe@example.com | Text | Varies | Draft | Public | Card, Payment | create |
+| PAY025 | Phone Number | Cardholder's phone number | Phone | Used for communication | FALSE | 555-123-4567 | Text | Varies | Draft | Public | Card, Payment | create |
+| PAY026 | Order ID | Unique identifier for an order | Order Number |  Identifies the order associated with the payment. | FALSE | ORD123 | Text | Varies | Draft | Public | Order, Payment | create |
+| PAY027 | Shipping Address | Shipping address for the order | Ship Address |  Address where the order is shipped. | FALSE | 456 Oak St | Text | Varies | Draft | Public | Order, Payment | create |
+| PAY028 | Customer ID | Unique identifier for a customer | Customer Number |  Identifies the customer making the purchase. | FALSE | CUST123 | Text | Varies | Draft | Public | Customer, Payment | create |
+| PAY029 | Loyalty Points | Number of loyalty points earned or redeemed | Points |  Points earned or redeemed in a transaction. | FALSE | 100 | Number | Numerical value | Draft | Public | Loyalty, Payment | create |
+| PAY030 | Payment Method | The method of payment used (e.g., Credit Card, PayPal) | Method |  Indicates the payment method. | FALSE | Credit Card | Text | Limited set of values | Draft | Public | Payment | create |
+| PAY031 | Recurring Payment ID | Unique identifier for a recurring payment | Recurring ID |  Identifies a recurring payment schedule. | FALSE | REC123 | Text | Varies | Draft | Public | Payment | create |
+| PAY032 | Subscription ID | Unique identifier for a subscription | Subscription |  Identifies a subscription service. | FALSE | SUB123 | Text | Varies | Draft | Public | Subscription, Payment | create |
+| PAY033 | Token | Secure representation of card details | Tokenized Card |  Replaces sensitive card data with a non-sensitive value. | TRUE |  1234567890ABCDEF | Text | Alphanumeric | Draft | Confidential | Card, Payment | create |
+| PAY034 | Transaction Status | The status of the transaction (e.g., Approved, Declined) | Status |  Indicates the current status of the transaction. | TRUE | Approved | Text | Limited set of values | Draft | Public | Payment | create |
+| PAY035 | Risk Score | Score assigned to a transaction based on risk factors | Risk |  Indicates the level of risk associated with the transaction. | FALSE | 75 | Number | Numerical value | Draft | Public | Fraud, Payment | create |
+| PAY036 | Fraud Indicator | Flag indicating potential fraud | Fraud |  Indicates whether the transaction is suspected to be fraudulent. | FALSE | TRUE | Text | Boolean value (TRUE/FALSE) | Draft | Public | Fraud, Payment | create |
+| PAY037 | MCC | Merchant Category Code |  | Identifies the type of business a merchant engages in | FALSE | 5964 | Number | 4 digit code | Draft | Public | Merchant, Payment | create |
+| PAY038 | Acquiring Bank | The bank that processes payments for the merchant | Acquirer | Financial institution that processes card payments on behalf of a merchant | FALSE | Bank of America | Text | Varies | Draft | Public | Merchant, Payment | create |
+| PAY039 | Issuing Bank | The bank that issued the card | Issuer | Financial institution that issued the card to the cardholder | FALSE | Chase | Text | Varies | Draft | Public | Card, Payment | create |
+| PAY040 | Chargeback Amount | Amount disputed by the cardholder | Dispute Amount | Amount of money being claimed by the cardholder in a chargeback | TRUE | 25.00 | Decimal | Two decimal places | Draft | Confidential | Payment | create |
+| PAY041 | Chargeback Reason Code | Code for the reason of chargeback | Reason Code | Standardized code indicating why a cardholder is disputing a transaction | FALSE | 53 | Number | Two or Three digit Code | Draft | Public | Payment | create |
+| PAY042 | Dispute Date | Date the dispute was initiated |  | The date that the cardholder initiated a formal dispute regarding a transaction. | TRUE | 2023-11-15 | Date | YYYY-MM-DD | Draft | Public | Payment | create |
+| PAY043 | Network Transaction ID | Unique ID assigned by the card network | Network ID | Transaction ID assigned by Visa, Mastercard, etc. | TRUE | 123456789012345 | Text | Alphanumeric, varying length | Draft | Confidential | Payment | create |
+| PAY044 | Terminal ID | ID of the POS terminal |  | Unique identifier of the physical point-of-sale terminal | TRUE | TERMINAL123 | Text | Alphanumeric, varying length | Draft | Public | Payment | create |
+| PAY045 | Cashback Amount | Amount of cash back provided |  | The amount of cash back provided to the cardholder during a transaction. | FALSE | 20.00 | Decimal | Two decimal places | Draft | Public | Payment | create |
+| PAY046 | Tip Amount | Gratuity added to a transaction |  | The amount of tip added to a service transaction. | FALSE | 5.00 | Decimal | Two decimal places | Draft | Public | Payment | create |
+| PAY047 | Signature Data |  Electronic Signature |  |  Digital signature for the payment transaction. | FALSE |  | Text | Varies | Draft | Public | Payment | create |
+| PAY048 | Wallet Type | Google Pay, Apple Pay | Digital Wallet |  Indicates if the transaction was processed through a digital wallet. | FALSE | Apple Pay | Text | Limited set of values (e.g., Apple Pay, Google Pay, Samsung Pay) | Draft | Public | Payment | create |
+| PAY049 | Card Brand | Visa, Mastercard, Amex | Card Type | The company that issued the card | FALSE | VISA | Text | Limited set of values | Draft | Public | Card, Payment | create |
+| PAY050 | Installment Count | Number of installments for payment |  | Number of payments to be made for a purchase | FALSE | 12 | Number | Numerical Value | Draft | Public | Payment | create |
+| PAY051 | Installment Amount | Amount for each installment |  | The amount to be paid in each installment. | TRUE | 100.00 | Decimal | Two decimal places | Draft | Confidential | Payment | create |
+| PAY052 | Invoice Number | Unique identifier for an invoice |  |  Number on invoice associated to the payment. | FALSE | INV-2024-001 | Text | Alphanumeric | Draft | Public | Payment | create |
+| PAY053 | Discount Amount | Amount reduced from the original price | Discount | The reduction in the price of goods or services | FALSE | 10.00 | Decimal | Two decimal places | Draft | Public | Payment | create |
+| PAY054 | Tax Amount | The total amount of tax charged |  | Amount of sales tax applied to the transaction. | FALSE | 5.00 | Decimal | Two decimal places | Draft | Public | Payment | create |
+| PAY055 | Shipping Cost | The amount charged for shipping |  | The expense incurred for shipping the purchased item. | FALSE | 7.00 | Decimal | Two decimal places | Draft | Public | Payment | create |
+| PAY056 | Handling Fee | The amount charged for handling |  | Fee for handling and preparing items for shipping. | FALSE | 2.00 | Decimal | Two decimal places | Draft | Public | Payment | create |
+| PAY057 | Refund ID | Unique identifier for a refund |  |  Unique identifier for a refund. | FALSE | REFUND123 | Text | Varies | Draft | Public | Payment | create |
+| PAY058 | Payment Processor | The company that processes payments |  | Third-party provider for payment processing. | FALSE | Stripe | Text | Varies | Draft | Public | Payment | create |
+| PAY059 | Capture Date | The date the funds were captured |  |  The date on which the funds are transferred from the cardholder's account to the merchant's. | TRUE | 2023-11-10 | Date | YYYY-MM-DD | Draft | Public | Payment | create |
+| PAY060 | Settlement Currency | The currency in which the funds are settled |  |  The currency in which the funds are settled. | TRUE | EUR | Text | 3-letter code | Draft | Public | Payment | create |
+| PAY061 | Exchange Rate | The rate used to convert currencies |  |  The rate used to convert currencies. | FALSE | 1.10 | Decimal | Decimal Value | Draft | Public | Payment | create |
+| PAY062 | Original Transaction ID | ID of the original transaction |  |  ID of the original transaction. | TRUE | TXN123 | Text | Varies | Draft | Confidential | Payment | create |
+| PAY063 | Customer IP Address | Customer's IP address |  | The IP address of the customer during the transaction. | FALSE | 192.168.1.100 | Text | Varies | Draft | Public | Fraud, Payment | create |
+| PAY064 | Billing Cycle | Monthly, Quarterly, Annually |  |  The frequency of billing for a subscription. | FALSE | Monthly | Text | Limited set of values | Draft | Public | Subscription, Payment | create |
+| PAY065 | Trial Period | Number of days or months for trial |  |  Length of the free trial period. | FALSE | 30 days | Text | Varies | Draft | Public | Subscription, Payment | create |
+| PAY066 | Cancellation Date | The date the subscription was cancelled |  | The date on which a subscription was cancelled. | TRUE | 2024-01-01 | Date | YYYY-MM-DD | Draft | Public | Subscription, Payment | create |
+| PAY067 | Cardholder Email | Email associated with the card |  |  Email address associated with the cardholder. | FALSE | user@example.com | Text | Varies | Draft | Public | Card, Payment | create |
+| PAY068 | Cardholder Phone | Phone number associated with the card |  |  Phone number associated with the cardholder. | FALSE | 555-123-4567 | Text | Varies | Draft | Public | Card, Payment | create |
+| PAY069 | Cardholder Country | Country where card was issued |  | The country where the card was issued. | TRUE | USA | Text | 3-letter code | Draft | Public | Card, Payment | create |
+| PAY070 | Billing Name | Name on the billing address |  | Name associated with the billing address | TRUE | John Smith | Text | Varies | Draft | Public | Card, Payment | create |
+| PAY071 | Billing City | City on the billing address |  | City associated with the billing address | TRUE | Anytown | Text | Varies | Draft | Public | Card, Payment | create |
+| PAY072 | Billing State | State on the billing address |  | State associated with the billing address | TRUE | CA | Text | 2-letter code | Draft | Public | Card, Payment | create |
+| PAY073 | Shipping Name | Name on the shipping address |  | Name associated with the shipping address | FALSE | Jane Smith | Text | Varies | Draft | Public | Payment | create |
+| PAY074 | Shipping City | City on the shipping address |  | City associated with the shipping address | FALSE | Anytown | Text | Varies | Draft | Public | Payment | create |
+| PAY075 | Shipping State | State on the shipping address |  | State associated with the shipping address | FALSE | CA | Text | 2-letter code | Draft | Public | Payment | create |
+| PAY076 | Shipping Country | Country on the shipping address |  | The country on the shipping address | FALSE | USA | Text | 3-letter code | Draft | Public | Payment | create |
+| PAY077 | Product Name | The name of the product purchased |  | The name of the item that was purchased | FALSE | Widget | Text | Varies | Draft | Public | Payment | create |
+| PAY078 | Product Quantity | How many products were purchased |  | The number of units of the product purchased | FALSE | 2 | Number | Numerical value | Draft | Public | Payment | create |
+| PAY079 | Product Price | The price of each product |  | The cost of one unit of the product | TRUE | 25.00 | Decimal | Two decimal places | Draft | Public | Payment | create |
+| PAY080 | Total Amount | The total amount of the purchase |  | The sum of all product prices, taxes, and shipping | TRUE | 57.00 | Decimal | Two decimal places | Draft | Public | Payment | create |
+| PAY081 | Authorization Date | The date of payment authorization |  | The date on which the payment was authorized | TRUE | 2023-10-27 | DateTime | YYYY-MM-DD HH:MM:SS | Draft | Public | Payment | create |
+| PAY082 | Local Currency | The local currency of the transaction |  | Currency used in the location of the transaction | TRUE | USD | Text | 3-letter code | Draft | Public | Payment | create |
+| PAY083 | Card Program | Rewards, Cashback | Card type |  The type of rewards program tied to the card | FALSE | Rewards | Text | Varies | Draft | Public | Card, Payment | create |
+| PAY084 | Point of Sale (POS) |  Where the transaction happened |  |  Physical location or online platform where the transaction occurred. | FALSE | Physical Store | Text | Varies | Draft | Public | Payment | create |
+| PAY085 | Transaction Time | The time when transaction happened |  |  The time when the transaction was processed. | TRUE | 14:30:00 | DateTime | HH:MM:SS | Draft | Public | Payment | create |
+| PAY086 | Settlement Bank | The bank where funds settled |  | The bank where funds were deposited | FALSE | Wells Fargo | Text | Varies | Draft | Public | Merchant, Payment | create |
+| PAY087 | Customer Language | Language Preferred |  | Customer's preferred language for communication | FALSE | English | Text | Varies | Draft | Public | Payment | create |
+| PAY088 | Customer Timezone | Timezone Preferred |  | Customer's preferred timezone for communication | FALSE | PST | Text | Varies | Draft | Public | Payment | create |
+| PAY089 | Store ID | Identifier for a Store |  | Unique ID for a store location | FALSE | STORE-123 | Text | Varies | Draft | Public | Merchant, Payment | create |
+| PAY090 | Register ID | Identifier for a Register |  | Unique ID for a cash register | FALSE | REGISTER-456 | Text | Varies | Draft | Public | Merchant, Payment | create |
+| PAY091 | Batch Close Time | Time to close the Batch |  | Time when the payment batch closed for the day | TRUE | 23:59:59 | DateTime | HH:MM:SS | Draft | Public | Payment | create |
+| PAY092 | Tip Percentage | Percentage of amount for the Tip |  | Tip percentage calculated from transaction amount | FALSE | 15% | Text | Varies | Draft | Public | Payment | create |
+| PAY093 | Card Entry Mode | Manual, Swipe, Chip | Card Mode |  How the card data was captured (manual entry, swipe, chip read) | FALSE | Chip | Text | Limited set of values | Draft | Public | Card, Payment | create |
+| PAY094 | PIN Data | Personal Identification Number |  | Encrypted card PIN data | TRUE | Encrypted PIN | Text | Varies | Draft | Confidential | Card, Payment | create |
+| PAY095 | Refund Reason | Explanation for refund |  |  Reason for the issued refund. | FALSE | Customer Request | Text | Varies | Draft | Public | Payment | create |
+| PAY096 | Dispute Resolution Date | When the Dispute has been resolved |  |  Date on which a payment dispute was resolved. | TRUE | 2024-02-28 | Date | YYYY-MM-DD | Draft | Public | Payment | create |
+| PAY097 | Dispute Outcome | Win, Loss, Settlement |  |  Outcome of a payment dispute (won by cardholder, won by merchant, settled). | FALSE | Win | Text | Limited set of values | Draft | Public | Payment | create |
+| PAY098 | Dispute Notes | Notes about the dispute |  |  Notes or comments related to a payment dispute. | FALSE |  | Text | Varies | Draft | Public | Payment | create |
+| PAY099 | Card Expiration Year | The year of card expiry |  | The four digit year when the card expires | TRUE | 2025 | Number | 4-digit year | Draft | Confidential | Card, Payment | create |
+| PAY100 | Card Expiration Month | Month when the card Expires |  |  The two digit month when the card expires | TRUE | 12 | Number | 2-digit month | Draft | Confidential | Card, Payment | create |
+| PAY101 | Network Response Code | Code from the card network | Response Code | Code returned by the card network indicating the outcome of the transaction | FALSE | 00 | Number | Two digit number | Draft | Public | Payment | create |
+| PAY102 | Acquirer Response Code | Code from the bank/acquirer | Response Code | Code returned by the acquiring bank indicating the outcome of the transaction | FALSE | 000 | Number | Three digit number | Draft | Public | Payment | create |
+| PAY103 | Original Auth Amount | Amount from the auth |  | Amount for the original authorization transaction | TRUE | 100.00 | Decimal | Two decimal places | Draft | Confidential | Payment | create |
+| PAY104 | Capture Amount | Total amount captured |  | Total amount captured from an authorized payment | TRUE | 100.00 | Decimal | Two decimal places | Draft | Confidential | Payment | create |
+| PAY105 | Void Date | Date when transaction was voided |  | Date when the transaction was voided | TRUE | 2024-01-01 | Date | YYYY-MM-DD | Draft | Public | Payment | create |
+| PAY106 | Void Time | Time when transaction was voided |  |  Time when the transaction was voided. | TRUE | 10:00:00 | DateTime | HH:MM:SS | Draft | Public | Payment | create |
+| PAY107 | Terminal Type | Type of payment terminal |  | Type of payment terminal used in the transaction | FALSE | POS | Text | Varies | Draft | Public | Payment | create |
+| PAY108 | Device OS | The OS of the used device |  | Operating system of the device used for the transaction | FALSE | iOS | Text | Varies | Draft | Public | Payment | create |
+| PAY109 | Device Browser | The Browser of the used device |  | Browser used by the customer during the transaction | FALSE | Chrome | Text | Varies | Draft | Public | Payment | create |
+| PAY110 | Fraud Filters | Various rules to stop fraud |  | List of fraud filters triggered for the transaction | FALSE | AVS, CVV | Text | Varies | Draft | Public | Fraud, Payment | create |
+| PAY111 | Fraud Score | Score for fraud risk | Fraud Score |  Numerical score representing the risk of fraud. | FALSE | 80 | Number | Numerical value | Draft | Public | Fraud, Payment | create |
+| PAY112 | Transaction Description | Short details of the transaction |  | Short explanation describing the transaction | FALSE | Online Purchase | Text | Varies | Draft | Public | Payment | create |
+| PAY113 | Authorization Method | Method for authorization | Auth Method |  Method of payment authorization (e.g., pre-authorization, instant authorization). | FALSE | Pre-Auth | Text | Varies | Draft | Public | Payment | create |
+| PAY114 | Settlement ID | Unique identifier for settlement |  | Unique ID assigned to a settlement | FALSE | SETT-123 | Text | Varies | Draft | Public | Merchant, Payment | create |
+| PAY115 | Batch Upload Date | Upload date for the settlement Batch |  |  Date on which a batch file was uploaded. | TRUE | 2024-02-20 | Date | YYYY-MM-DD | Draft | Public | Payment | create |
+| PAY116 | Batch Total Amount | Total Amount for the settlement Batch |  |  Total amount of all transactions included in the batch. | TRUE | 5000.00 | Decimal | Two decimal places | Draft | Confidential | Payment | create |
+| PAY117 | Expected Settlement Date | Date of expected settlement |  | Date when the settlement is expected to occur | TRUE | 2024-02-22 | Date | YYYY-MM-DD | Draft | Public | Merchant, Payment | create |
+| PAY118 | Card Nickname | Name for a saved card |  |  User-defined name for a saved credit card. | FALSE | Work Card | Text | Varies | Draft | Public | Card, Payment | create |
+| PAY119 | Partial Approval Capable | Partial approval Flag |  | Indicator of whether partial approvals are supported | FALSE | TRUE | Text | Boolean value (TRUE/FALSE) | Draft | Public | Payment | create |
+| PAY120 | Recurring Frequency | Frequency of payment |  |  Frequency of recurring payments (e.g., weekly, monthly, yearly). | FALSE | Monthly | Text | Varies | Draft | Public | Subscription, Payment | create |
+| PAY121 | Retry Attempts | Retries for failing transaction |  | Number of attempts to retry a failed transaction | FALSE | 3 | Number | Numerical value | Draft | Public | Payment | create |
+| PAY122 | Last Retry Date | Last date when transaction was Retried |  |  Date when the last retry attempt was made. | TRUE | 2024-03-01 | Date | YYYY-MM-DD | Draft | Public | Payment | create |
+| PAY123 | Reason for Decline | Reason for payment fail |  | Reason for payment declined | FALSE | Insufficient Funds | Text | Varies | Draft | Public | Payment | create |
+| PAY124 | Transaction Note | Additional details for a transaction | Note | Any additional data attached to the transaction | FALSE | Gift Card Used | Text | Varies | Draft | Public | Payment | create |
+| PAY125 | Wallet Transaction ID | Identifier for a wallet transaction | Wallet ID |  Transaction identifier specific to the digital wallet. | TRUE | Wallet-TXN-123 | Text | Varies | Draft | Confidential | Payment | create |
+| PAY126 | Bank Reference Number | Reference number provided by Bank | Ref No | Reference Number from the customer bank for the payment | FALSE | 987654321 | Number | Numerical value | Draft | Public | Payment | create |
+| PAY127 | Source IP Address | The originating IP address of request |  | Original IP address of the payment request. | FALSE | 192.168.2.1 | Text | Varies | Draft | Public | Fraud, Payment | create |
+| PAY128 | Destination IP Address | Receiving IP Address for payment |  | Destination IP Address for the payment request. | FALSE | 10.0.0.5 | Text | Varies | Draft | Public | Fraud, Payment | create |
+| PAY129 | Network Latency | Network Time for the transaction |  | Time taken for the network request and response | FALSE | 200 ms | Text | Varies | Draft | Public | Payment | create |
+| PAY130 | Risk Threshold |  Limit for risk assessment |  | Upper Limit for risk assessment | FALSE | 90 | Number | Numerical value | Draft | Public | Fraud, Payment | create |
+| PAY131 | Card Sequence Number | The sequence Number for the card |  | The number of times the card has been used | FALSE | 2 | Number | Numerical value | Draft | Confidential | Card, Payment | create |
+| PAY132 | Card Present Indicator | Whether the card was present |  | Indicates if the card was present or absent | FALSE | TRUE | Text | Boolean value (TRUE/FALSE) | Draft | Public | Payment | create |
+| PAY133 | Recurring Start Date | Date of Recurring start |  | Date when the recurring payment starts | TRUE | 2024-04-01 | Date | YYYY-MM-DD | Draft | Public | Subscription, Payment | create |
+| PAY134 | Recurring End Date | Date when recurring Stops |  | Date when the recurring payment ends | TRUE | 2025-04-01 | Date | YYYY-MM-DD | Draft | Public | Subscription, Payment | create |
+| PAY135 | Billing Descriptor | Description on the bill |  | Description that shows on the customer's billing statement. | FALSE | Example Store | Text | Varies | Draft | Public | Payment | create |
+| PAY136 | Store Credit Amount | Used store credit for payment |  | Amount of store credit used in the transaction | FALSE | 10.00 | Decimal | Two decimal places | Draft | Public | Payment | create |
+| PAY137 | Gift Card Number | Number on the Gift card |  | Unique identifier for a gift card. | TRUE | GC1234567890 | Text | Alphanumeric | Draft | Confidential | Payment | create |
+| PAY138 | Gift Card Amount | Amount on the gift card |  | The total value on the gift card | TRUE | 50.00 | Decimal | Two decimal places | Draft | Confidential | Payment | create |
+| PAY139 | Shipping Method | Chosen Shipment method |  | Shipping method selected by the customer. | FALSE | Express | Text | Varies | Draft | Public | Payment | create |
+| PAY140 | Customer User Agent | The agent used by customer |  | User agent string from the customer's browser | FALSE | Mozilla/5.0 | Text | Varies | Draft | Public | Fraud, Payment | create |
+| PAY141 | Mobile Country Code | The Country code for mobile device |  | Mobile country code of the customer's mobile device | FALSE | 310 | Number | Numerical value | Draft | Public | Fraud, Payment | create |
+| PAY142 | Mobile Network Code | Network code for the mobile device |  | Mobile network code of the customer's mobile device | FALSE | 004 | Number | Numerical value | Draft | Public | Fraud, Payment | create |
+| PAY143 | Authentication Method | Method for the payment |  |  The process for the transaction authentication | FALSE | 3D Secure | Text | Varies | Draft | Public | Payment | create |
+| PAY144 | Authentication Value | Secure value for payment |  |  Secure value for authentication. | TRUE | SecureVal123 | Text | Alphanumeric | Draft | Confidential | Payment | create |
+| PAY145 | 3D Secure Version | The version used for secure transaction |  | Version of the 3D Secure protocol used | FALSE | 2.0 | Number | Numerical value | Draft | Public | Payment | create |
+| PAY146 | 3D Secure Result | Outcome of the 3D secure payment |  | Result of 3D Secure authentication process | FALSE | Success | Text | Varies | Draft | Public | Payment | create |
+| PAY147 | Currency Conversion Rate | Conversion for transaction |  |  Rate to conver the amount to the local currency | FALSE | 1.2 | Decimal | Decimal Value | Draft | Public | Payment | create |
+| PAY148 | Billing Agreement ID | Agreement for the payment |  | Unique identifier for the billing agreement. | TRUE | BA-1234567890 | Text | Alphanumeric | Draft | Confidential | Payment | create |
+| PAY149 | Discount Code | Code used for discounts |  | Code for a discount offer | FALSE | SAVE10 | Text | Alphanumeric | Draft | Public | Payment | create |
+| PAY150 | Card Hash | Hashed card value |  | Secure hash of the card number for anonymization | TRUE | HashedValue | Text | Alphanumeric | Draft | Confidential | Payment | create |
+| PAY151 | Account Type | Type of account for debit |  | Type of bank account (e.g., checking, savings) | FALSE | Checking | Text | Limited set of values | Draft | Public | Payment | create |
+| PAY152 | Check Number | Number on the check |  | Unique identifier for a check | TRUE | 1001 | Number | Numerical value | Draft | Confidential | Payment | create |
+| PAY153 | Check Amount | Amount on the check |  | Amount specified on the check | TRUE | 50.00 | Decimal | Two decimal places | Draft | Confidential | Payment | create |
+| PAY154 | Name on Check | Name on the check |  | Name of the payee on the check | TRUE | John Doe | Text | Varies | Draft | Public | Payment | create |
+| PAY155 | Mobile App Version | Version of the mobile app |  | Version number of
