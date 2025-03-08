@@ -1,0 +1,29 @@
+> OIE_002 INFO 2025-03-08T23:39:28.646Z Starting export operation.
+Execution Client: UI
+Job Name: job-1741477145887
+Organization: Capgemini
+Job Id: 4c9oREFNkk3fOd5fyyzG0k
+User: SKD2004@GMAIL.com
+> OIE_004 INFO 2025-03-08T23:39:28.717Z Successfully exported object [/SYS/_SYSTEM_PROJECT] of type [Project] id [2oLnnaDVEazivBi78TLyY2]
+> OIE_004 INFO 2025-03-08T23:39:28.717Z Successfully exported object [/Explore/Default] of type [Project] id [1O143p6VyQpbzTyMb8mIMo]
+> OIE_004 INFO 2025-03-08T23:39:28.746Z Successfully exported object [/Explore/Default/Salesforce_Recipe] of type [Folder] id [3xJhyE1ToyOfoR2bYYN528]
+> OIE_004 INFO 2025-03-08T23:39:28.746Z Successfully exported object [/SYS/_SYSTEM_FOLDER] of type [Folder] id [5Ev2y8XfjEcgd5RuT5xfkJ]
+> OIE_004 INFO 2025-03-08T23:39:28.946Z Successfully exported object [/Explore/Default/Salesforce_Recipe/GeminiAIAgentConnection] of type [AI_CONNECTION] id [7j3m5svs6iUle8rNOmWVkd]
+> OIE_004 INFO 2025-03-08T23:39:28.946Z Successfully exported object [/Explore/Default/Salesforce_Recipe/SalesforceQueryConnector] of type [AI_SERVICE_CONNECTOR] id [cEnHnJadHEXeLXU3TDreae]
+> OIE_004 INFO 2025-03-08T23:39:28.946Z Successfully exported object [/Explore/Default/Salesforce_Recipe/GenerationConfig_PO] of type [PROCESS_OBJECT] id [2JphsT6RlI4frq86yCs7gz]
+> OIE_004 INFO 2025-03-08T23:39:28.946Z Successfully exported object [/SYS/DESKTOP-TM8K9I5] of type [AgentGroup] id [befWlGm6zipdARJr0StRso]
+> OIE_004 INFO 2025-03-08T23:39:29.123Z Successfully exported object [/Explore/Default/Salesforce_Recipe/Prompt Engineering] of type [PROCESS] id [28SFHN06Zy0kXQCjJo346M]
+> OIE_004 INFO 2025-03-08T23:39:29.123Z Successfully exported object [/Explore/Default/Salesforce_Recipe/SalesforceQueryConnection] of type [AI_CONNECTION] id [6Tgx5QCBRwVbDdhwqlxHmN]
+> OIE_004 INFO 2025-03-08T23:39:29.123Z Successfully exported object [/SYS/Flat_File_Local] of type [Connection] id [3cOoa9rwOIZb5c84tZ3TY0]
+> OIE_004 INFO 2025-03-08T23:39:29.123Z Successfully exported object [/SYS/Snowflake_Connection_v2] of type [Connection] id [d5bGYmhxB2Zkvdxt40wdQY]
+> OIE_004 INFO 2025-03-08T23:39:29.173Z Successfully exported object [/Explore/Default/Salesforce_Recipe/Salesforce Executor] of type [PROCESS] id [0o1ScpTUdZohxFz2ZjxEeS]
+> OIE_004 INFO 2025-03-08T23:39:29.248Z Successfully exported object [/Explore/Default/Salesforce_Recipe/Mapping1] of type [DTEMPLATE] id [85H6A2IxBUQjglnScZRbo5]
+> OIE_004 INFO 2025-03-08T23:39:29.309Z Successfully exported object [/Explore/Default/Salesforce_Recipe/GeminiAI Agent for Salesforce] of type [PROCESS] id [3LXtGDGZTRoeT4bAizz6se]
+> OIE_003 INFO 2025-03-08T23:39:29.309Z Finished export operation.
+Job Name: job-1741477145887
+Start Time: 03/08/25 11:39 PM
+End Time: 03/08/25 11:39 PM
+Started by: SKD2004@GMAIL.com
+Start Method: UI
+Source Organization: Capgemini
+Status: SUCCESSFUL
